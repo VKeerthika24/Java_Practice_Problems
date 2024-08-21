@@ -1,33 +1,30 @@
 import java.util.Scanner;
+
 public class Armstrong {
     public static void main(String[] args) {
-        System.out.println("Enter the number: ");
+        int num1,num2;
         Scanner sc=new Scanner(System.in);
-        int num=sc.nextInt();
-        int temp,res=0,r;
-        temp=num;
-        while(temp>0)
+        System.out.println("Enter the lower number");
+        num1=sc.nextInt();
+        System.out.println("Enter the higher number");
+        num2=sc.nextInt();
+
+        for(int i=num1;i<num2;i++)
         {
-            r=temp%10;
-            res=res+(int)Math.pow(r,3);
-            temp/=10;
+            int r,sum=0,num;
+            num=i;
+            while(num!=0)
+            {
+                r=num%10;
+                sum=sum+(int)Math.pow(r,3);
+                num=num/10;
+            }
+            if(sum==i)
+            {
+                System.out.println(i);
+            }
 
         }
-        if(res==num)
-        {
-            System.out.println("the number is an armstrong");
-        }
-        else{
-            System.out.println("the number is not an armstrong");
-        }
+
     }
 }
-
-
-
-
-
-
-
-
-
